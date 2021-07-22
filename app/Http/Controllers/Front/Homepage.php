@@ -23,6 +23,7 @@ class Homepage extends Controller
          view()->share('pages',Page::where('durum',1)->orderBy('order','ASC')->get());
          //bu iki funksiyani her defe yeni funksiya yazanda elave etmeliyik ki,butun sehifler calissin..ona gore construct funksiyasinda yaziriq ki,sehife acilir acilmaz calissin..bunlarida diger funksiyalarda bagladiq..
          view()->share('categories',Categories::where('durum',1)->inRandomOrder()->get());
+         view()->share('ayarlar',Ayarlar::find(1));//providers icindeki appserverden geldi..orda olanda migrate fresh etdikde xeta verir,ya githubdan yukluyende migrate yene etdikde yaranmir
    }
    public function index()
    {
